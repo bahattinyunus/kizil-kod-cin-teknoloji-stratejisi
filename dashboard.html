@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kızıl Kod — Çin Teknoloji Stratejisi & TRL İstihbarat Paneli</title>
+  <style>
+    :root {
+      --bg-primary: #0a0c10;
+      --bg-secondary: #121620;
+      --bg-card: #19202f;
+      --accent-red: #e63946;
+      --accent-crimson: #9e2a2b;
+      --accent-gold: #f4a261;
+      --accent-cyan: #2a9d8f;
+      --text-main: #f1faee;
+      --text-muted: #94a3b8;
+      --border-color: #2a3449;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      padding-bottom: 50px;
+    }
+    header {
+      background: linear-gradient(135deg, #1f0b10 0%, #0d131f 100%);
+      border-bottom: 2px solid var(--accent-red);
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .header-title h1 {
+      font-size: 26px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .header-title h1 span.badge {
+      background: var(--accent-red);
+      color: white;
+      font-size: 13px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .header-title p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .header-meta {
+      text-align: right;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .container {
+      max-width: 1400px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    /* Stats Bar */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent-red);
+    }
+    .stat-card.gold::before { background: var(--accent-gold); }
+    .stat-card.cyan::before { background: var(--accent-cyan); }
+    .stat-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .stat-val {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .stat-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    /* Navigation Tabs */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 25px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 12px 20px;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover { color: #fff; }
+    .tab-btn.active {
+      color: #fff;
+      border-bottom-color: var(--accent-red);
+      background: rgba(230, 57, 70, 0.08);
+      border-radius: 6px 6px 0 0;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    /* Tables & Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 25px;
+    }
+    .card h2 {
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+    th {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+    tr:hover { background: rgba(255, 255, 255, 0.02); }
+    /* Progress Bars */
+    .prog-track {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      height: 8px;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .prog-fill {
+      height: 100%;
+      border-radius: 10px;
+      background: var(--accent-red);
+    }
+    .prog-fill.green { background: #2a9d8f; }
+    .prog-fill.gold { background: #f4a261; }
+    /* Badges */
+    .pill {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .pill-red { background: rgba(230, 57, 70, 0.2); color: #ff6b6b; border: 1px solid rgba(230, 57, 70, 0.4); }
+    .pill-green { background: rgba(42, 157, 143, 0.2); color: #48cae4; border: 1px solid rgba(42, 157, 143, 0.4); }
+    .pill-gold { background: rgba(244, 162, 97, 0.2); color: #f4a261; border: 1px solid rgba(244, 162, 97, 0.4); }
+    /* Search box */
+    .search-box {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--accent-red); }
+    /* Synergies Grid */
+    .synergy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 20px;
+    }
+    .synergy-item {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .synergy-item h3 {
+      font-size: 16px;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+    }
+    .synergy-item p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .synergy-geo {
+      background: rgba(230, 57, 70, 0.08);
+      border-left: 3px solid var(--accent-red);
+      padding: 8px 12px;
+      font-size: 12px;
+      color: #ffccd5;
+      border-radius: 0 4px 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-title">
+      <h1>
+        <span>🟥</span> KIZIL KOD: Çin Teknoloji Stratejisi
+        <span class="badge">TRL & MCF Platformu</span>
+      </h1>
+      <p>Ulusal Güç, Teknolojik Olgunluk (TRL), Boğulma Noktaları (卡脖子) ve Askeri-Sivil Entegrasyon İstihbarat Paneli</p>
+    </div>
+    <div class="header-meta">
+      <div>Rapor Oluşturulma: <strong>23 Eki 2026 12:01</strong></div>
+      <div>Veri Seti Kapsamı: <strong>24 Stratejik Doküman, 10 Boğulma Noktası</strong></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Quick Metrics -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Toplam İncelenen Belge</div>
+        <div class="stat-val">24</div>
+        <div class="stat-sub">Stratejik teknoloji vakaları</div>
+      </div>
+      <div class="stat-card cyan">
+        <div class="stat-label">Genel Bağımsızlık Skoru</div>
+        <div class="stat-val">%62</div>
+        <div class="stat-sub">Yerli teknolojik özerklik endeksi</div>
+      </div>
+      <div class="stat-card gold">
+        <div class="stat-label">Boğulma Noktası İkame Oranı</div>
+        <div class="stat-val">%36.8</div>
+        <div class="stat-sub">10 kritik (卡脖子) alanda yerli pay</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Kritik Dual-Use (MCF) Oranı</div>
+        <div class="stat-val">%33.3</div>
+        <div class="stat-sub">Askeri-Sivil entegrasyon payı</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('tab-matrix')">📊 Sektör TRL Matrisi</button>
+      <button class="tab-btn" onclick="switchTab('tab-chokepoints')">🛑 Boğulma Noktaları (卡脖子)</button>
+      <button class="tab-btn" onclick="switchTab('tab-mcf')">⚔️ Askeri-Sivil Entegrasyon (MCF)</button>
+      <button class="tab-btn" onclick="switchTab('tab-actors')">🏛️ Stratejik Aktörler</button>
+      <button class="tab-btn" onclick="switchTab('tab-synergies')">⚡ Çapraz Sinerjiler</button>
+      <button class="tab-btn" onclick="switchTab('tab-docs')">📄 Doküman Kütüphanesi</button>
+    </div>
+
+    <!-- TAB 1: SEKTÖR TRL MATRİSİ -->
+    <div id="tab-matrix" class="tab-content active">
+      <div class="card">
+        <h2>Sektör Bazlı Teknolojik Olgunluk (TRL) ve Özerklik Endeksi</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Teknoloji Alanı</th>
+              <th>Belge Sayısı</th>
+              <th>Ortalama TRL</th>
+              <th>Olgunluk Seviyesi</th>
+              <th>Stratejik Özerklik</th>
+              <th>Temsili Başlıklar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td><strong>BIYOTEKNOLOJI</strong></td>
+                <td>1</td>
+                <td><span class="pill pill-green">TRL 9 / 9</span></td>
+                <td>Ticari ve Operasyonel (TRL 8-9)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%99</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill green" style="width: 99%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  BGI Group Ulusal Gen Bankası ve Sentetik Biyoloji
+                </td>
+              </tr><tr>
+                <td><strong>SAVUNMA</strong></td>
+                <td>3</td>
+                <td><span class="pill pill-green">TRL 8.3 / 9</span></td>
+                <td>Ticari ve Operasyonel (TRL 8-9)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%92</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill green" style="width: 92%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  WS-15 Turbofan Beşinci Nesil Savaş Uçağı Motoru • BeiDou-3 Küresel Konumlandırma ve Çift Kullanımlı Entegrasyon • C919 Yolcu Uçağı ve Yerli CJ-1000A Motor Uçuş Testleri
+                </td>
+              </tr><tr>
+                <td><strong>SIBER-GÜVENLIK</strong></td>
+                <td>3</td>
+                <td><span class="pill pill-gold">TRL 7 / 9</span></td>
+                <td>Prototip ve Gösterim (TRL 5-7)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%78</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill green" style="width: 78%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  Great Firewall Kuantum Anahtar Dağıtımı (QKD) Entegrasyonu • Şanghay Akıllı Şehir Kameraları Yüz Tanıma Entegrasyonu • BGI Group Ulusal Gen Bankası ve Sentetik Biyoloji
+                </td>
+              </tr><tr>
+                <td><strong>HAVACILIK</strong></td>
+                <td>1</td>
+                <td><span class="pill pill-gold">TRL 7 / 9</span></td>
+                <td>Prototip ve Gösterim (TRL 5-7)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%54</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill gold" style="width: 54%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  C919 Yolcu Uçağı ve Yerli CJ-1000A Motor Uçuş Testleri
+                </td>
+              </tr><tr>
+                <td><strong>UZAY</strong></td>
+                <td>7</td>
+                <td><span class="pill pill-gold">TRL 6.7 / 9</span></td>
+                <td>Prototip ve Gösterim (TRL 5-7)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%74</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill green" style="width: 74%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  Tiangong Uzay İstasyonu Robotik Kol Entegrasyonu • Yapay Zeka Destekli Otonom Dron Sürüsü (DJI) • Kuantum Haberleşme Uydusu Micius Prototip Çalışmaları
+                </td>
+              </tr><tr>
+                <td><strong>YARIILETKEN</strong></td>
+                <td>7</td>
+                <td><span class="pill pill-gold">TRL 6.1 / 9</span></td>
+                <td>Prototip ve Gösterim (TRL 5-7)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%44</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill " style="width: 44%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  SMIC 7nm ve 5nm Çip Üretim Süreçleri • Fotonik Çip Laboratuvar Deneyleri (Tsinghua Üniversitesi) • DeepSeek-V3 ve R1 Akıl Yürütme Mimarisi
+                </td>
+              </tr><tr>
+                <td><strong>YAPAY-ZEKA</strong></td>
+                <td>6</td>
+                <td><span class="pill pill-gold">TRL 6 / 9</span></td>
+                <td>Prototip ve Gösterim (TRL 5-7)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%67</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill gold" style="width: 67%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  Baidu Ernie Bot 4.0 LLM Yetenek Değerlendirmesi • Yapay Zeka Destekli Otonom Dron Sürüsü (DJI) • Şanghay Akıllı Şehir Kameraları Yüz Tanıma Entegrasyonu
+                </td>
+              </tr><tr>
+                <td><strong>TELEKOM</strong></td>
+                <td>4</td>
+                <td><span class="pill pill-gold">TRL 5.5 / 9</span></td>
+                <td>Prototip ve Gösterim (TRL 5-7)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%61</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill gold" style="width: 61%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  Huawei 6G Ağ Standartları ve Patent Başvuruları • Kuantum Haberleşme Uydusu Micius Prototip Çalışmaları • Guowang (GW) 13.000 Uyduluk Mega-Takımyıldızı
+                </td>
+              </tr><tr>
+                <td><strong>BATARYA</strong></td>
+                <td>3</td>
+                <td><span class="pill pill-red">TRL 4.7 / 9</span></td>
+                <td>Araştırma ve Kavramsal (TRL 1-4)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%65</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill gold" style="width: 65%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  CATL Sodyum-İyon ve Katı Hal Batarya Geliştirme • BYD Blade Batarya Güvenlik ve Saha Testleri • Nadir Toprak Elementleri ve Galyum-Germanyum İhracat Kotaları
+                </td>
+              </tr><tr>
+                <td><strong>POLITIKA</strong></td>
+                <td>6</td>
+                <td><span class="pill pill-red">TRL 4.5 / 9</span></td>
+                <td>Araştırma ve Kavramsal (TRL 1-4)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%50</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill gold" style="width: 50%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  SMIC 7nm ve 5nm Çip Üretim Süreçleri • Huawei 6G Ağ Standartları ve Patent Başvuruları • Çin Devlet Konseyi 'Made in China 2025' İlerleme Raporu
+                </td>
+              </tr><tr>
+                <td><strong>KUANTUM</strong></td>
+                <td>3</td>
+                <td><span class="pill pill-red">TRL 4 / 9</span></td>
+                <td>Araştırma ve Kavramsal (TRL 1-4)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%44</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill " style="width: 44%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  Great Firewall Kuantum Anahtar Dağıtımı (QKD) Entegrasyonu • Fotonik Çip Laboratuvar Deneyleri (Tsinghua Üniversitesi) • Kuantum Haberleşme Uydusu Micius Prototip Çalışmaları
+                </td>
+              </tr><tr>
+                <td><strong>ROBOTIK</strong></td>
+                <td>1</td>
+                <td><span class="pill pill-red">TRL 4 / 9</span></td>
+                <td>Araştırma ve Kavramsal (TRL 1-4)</td>
+                <td style="width: 180px;">
+                  <div style="display:flex; justify-content:space-between; font-size:12px;">
+                    <span>Özerklik:</span>
+                    <strong>%44</strong>
+                  </div>
+                  <div class="prog-track">
+                    <div class="prog-fill " style="width: 44%;"></div>
+                  </div>
+                </td>
+                <td style="color: var(--text-muted); font-size: 13px;">
+                  Unitree ve Fourier İnsansı Robotik Bedenlenmiş Yapay Zeka
+                </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 2: BOĞULMA NOKTALARI -->
+    <div id="tab-chokepoints" class="tab-content">
+      <div class="card">
+        <h2>Çin'in Stratejik Boğulma Noktaları (卡脖子 - Ka Bo Zi) ve Yerli İkame Durumu</h2>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px;">
+          Çin Sanayi ve Bilgi Teknolojileri Bakanlığı (MIIT) tarafından tespit edilen, Batı yaptırımlarına en açık ve yerli ikame çalışmalarının en yoğun olduğu 10 kritik teknoloji:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Teknoloji & Çince Terim</th>
+              <th>Sektör</th>
+              <th>Kritiklik</th>
+              <th>Yerli İkame Payı</th>
+              <th>Yabancı Tekel</th>
+              <th>Çinli Rakipler</th>
+              <th>Hedef Yıl</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>
+                  <strong>EUV / İleri DUV Litografi Sistemleri</strong><br>
+                  <small style="color: var(--text-muted);">光刻机 (Guang Ke Ji)</small>
+                </td>
+                <td>Yarı İletken</td>
+                <td><span class="pill pill-red">Kritik</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%15</div>
+                  <div class="prog-track">
+                    <div class="prog-fill " style="width: 15%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">ASML (Hollanda), Nikon / Canon (Japonya)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">SMEE (Shanghai Micro Electronics), CIOMP (Changchun Optik Enstitüsü)</td>
+                <td><strong>2028</strong></td>
+              </tr><tr>
+                <td>
+                  <strong>Elektronik Tasarım Otomasyonu (EDA) Yazılımı</strong><br>
+                  <small style="color: var(--text-muted);">EDA软件</small>
+                </td>
+                <td>Yarı İletken</td>
+                <td><span class="pill pill-red">Kritik</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%25</div>
+                  <div class="prog-track">
+                    <div class="prog-fill " style="width: 25%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">Synopsys (ABD), Cadence (ABD), Siemens EDA (Almanya)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">Empyrean Technology, Primarius Technologies</td>
+                <td><strong>2027</strong></td>
+              </tr><tr>
+                <td>
+                  <strong>Gelişmiş Fotodirenç (ArF / EUV Photoresist)</strong><br>
+                  <small style="color: var(--text-muted);">光刻胶</small>
+                </td>
+                <td>Kimya / Yarı İletken</td>
+                <td><span class="pill pill-red">Kritik</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%18</div>
+                  <div class="prog-track">
+                    <div class="prog-fill " style="width: 18%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">Tokyo Ohka Kogyo (TOK), JSR, Shin-Etsu (Japonya)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">Xuzhou B&C Chemical, Crystal Clear Electronic Material</td>
+                <td><strong>2026</strong></td>
+              </tr><tr>
+                <td>
+                  <strong>RF Alıcı-Verici Çipleri (RF Transceivers & BAW Filtreler)</strong><br>
+                  <small style="color: var(--text-muted);">射频芯片与滤波器</small>
+                </td>
+                <td>Telekomünikasyon</td>
+                <td><span class="pill pill-gold">Yüksek</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%35</div>
+                  <div class="prog-track">
+                    <div class="prog-fill gold" style="width: 35%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">Broadcom (ABD), Skyworks (ABD), Murata (Japonya)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">Maxscend Microelectronics, Wuhan Minisensing</td>
+                <td><strong>2026</strong></td>
+              </tr><tr>
+                <td>
+                  <strong>Ticari Havacılık Yüksek Baypaslı Turbofan Motorları</strong><br>
+                  <small style="color: var(--text-muted);">大涵道比涡扇发动机</small>
+                </td>
+                <td>Havacılık / Savunma</td>
+                <td><span class="pill pill-red">Kritik</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%20</div>
+                  <div class="prog-track">
+                    <div class="prog-fill " style="width: 20%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">CFM International (ABD/Fransa), Pratt & Whitney (ABD), Rolls-Royce (İngiltere)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">AECC Commercial Aircraft Engine (CJ-1000A / CJ-2000)</td>
+                <td><strong>2029</strong></td>
+              </tr><tr>
+                <td>
+                  <strong>Hassas Beş Eksenli CNC Takım Tezgahları ve Kontrolörleri</strong><br>
+                  <small style="color: var(--text-muted);">五轴联动数控机床</small>
+                </td>
+                <td>İleri Üretim</td>
+                <td><span class="pill pill-gold">Yüksek</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%40</div>
+                  <div class="prog-track">
+                    <div class="prog-fill gold" style="width: 40%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">DMG Mori (Almanya/Japonya), Mazak (Japonya), Fanuc (Japonya)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">Dalian Kede Numerical Control, Shenyang Machine Tool</td>
+                <td><strong>2027</strong></td>
+              </tr><tr>
+                <td>
+                  <strong>Gelişmiş AI Hızlandırıcı GPU'lar ve Derleme Ekosistemleri</strong><br>
+                  <small style="color: var(--text-muted);">高端AI训练芯片 (CUDA生态)</small>
+                </td>
+                <td>Yapay Zeka</td>
+                <td><span class="pill pill-gold">Yüksek</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%45</div>
+                  <div class="prog-track">
+                    <div class="prog-fill gold" style="width: 45%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">NVIDIA (ABD), AMD (ABD)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">Huawei (Ascend 910 serisi), Biren Technology, Moore Threads</td>
+                <td><strong>2026</strong></td>
+              </tr><tr>
+                <td>
+                  <strong>Endüstriyel Robot Redüktörleri (RV & Harmonik Redüktörler)</strong><br>
+                  <small style="color: var(--text-muted);">高精度减速机</small>
+                </td>
+                <td>Robotik</td>
+                <td><span class="pill pill-green">Orta</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%55</div>
+                  <div class="prog-track">
+                    <div class="prog-fill green" style="width: 55%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">Nabtesco (Japonya), Harmonic Drive Systems (Japonya)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">Leaderdrive (Leader Harmonious), Shantui</td>
+                <td><strong>2025</strong></td>
+              </tr><tr>
+                <td>
+                  <strong>Havacılık Sınıfı Karbon Fiber (T800 / T1000 / MJ Serisi)</strong><br>
+                  <small style="color: var(--text-muted);">高性能碳纤维</small>
+                </td>
+                <td>İleri Malzemeler</td>
+                <td><span class="pill pill-green">Orta</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%65</div>
+                  <div class="prog-track">
+                    <div class="prog-fill green" style="width: 65%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">Toray Industries (Japonya), Teijin (Japonya), Hexcel (ABD)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">Zhongfu Shenying Carbon Fiber, Guangwei Composite</td>
+                <td><strong>2025</strong></td>
+              </tr><tr>
+                <td>
+                  <strong>Ağır Hizmet Endüstriyel Gaz Türbinleri</strong><br>
+                  <small style="color: var(--text-muted);">重型燃气轮机 (F/H Sınıfı)</small>
+                </td>
+                <td>Enerji</td>
+                <td><span class="pill pill-gold">Yüksek</span></td>
+                <td style="width: 150px;">
+                  <div style="font-size:12px; font-weight:600;">%50</div>
+                  <div class="prog-track">
+                    <div class="prog-fill green" style="width: 50%;"></div>
+                  </div>
+                </td>
+                <td style="font-size: 13px;">Siemens Energy (Almanya), GE (ABD), Mitsubishi Heavy Industries (Japonya)</td>
+                <td style="font-size: 13px; color: var(--accent-gold);">Dongfang Electric, Shanghai Electric (G50 / F sınıfı)</td>
+                <td><strong>2027</strong></td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3: MCF ANALİZİ -->
+    <div id="tab-mcf" class="tab-content">
+      <div class="card">
+        <h2>Askeri-Sivil Entegrasyon (Military-Civil Fusion - 军民融合) Analizi</h2>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 20px;">
+          Sivil ticari yatırımlar ile Halk Kurtuluş Ordusu (PLA) modernizasyonunun tek bir havuzda birleştirilmesi doktrini.
+        </p>
+        <div class="stats-grid">
+          
+            <div class="stat-card">
+              <div class="stat-label">Doğrudan Askeri / Ulusal Güvenlik Entegrasyonu</div>
+              <div class="stat-val">8 <span style="font-size: 16px; color: var(--text-muted);">(%33.3)</span></div>
+            </div>
+          
+            <div class="stat-card">
+              <div class="stat-label">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</div>
+              <div class="stat-val">9 <span style="font-size: 16px; color: var(--text-muted);">(%37.5)</span></div>
+            </div>
+          
+            <div class="stat-card">
+              <div class="stat-label">Stratejik Endüstriyel / Bilişsel Altyapı</div>
+              <div class="stat-val">5 <span style="font-size: 16px; color: var(--text-muted);">(%20.8)</span></div>
+            </div>
+          
+            <div class="stat-card">
+              <div class="stat-label">Ağırlıklı Olarak Sivil / Tüketici Odaklı</div>
+              <div class="stat-val">2 <span style="font-size: 16px; color: var(--text-muted);">(%8.3)</span></div>
+            </div>
+          
+        </div>
+
+        <h3 style="margin: 20px 0 10px; font-size: 16px; color: var(--accent-gold);">Yüksek Riskli / Doğrudan Askeri Entegre Projeler</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Belge / Teknoloji</th>
+              <th>Aktör</th>
+              <th>Entegrasyon Düzeyi</th>
+              <th>Dual-Use Puanı</th>
+              <th>Stratejik Değerlendirme</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><strong>Tiangong Uzay İstasyonu Robotik Kol Entegrasyonu</strong></td>
+                <td>CASC</td>
+                <td><span class="pill pill-red">Doğrudan Askeri / Ulusal Güvenlik Entegrasyonu</span></td>
+                <td><strong>95 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Harp kabiliyeti, stratejik nükleer/uzay gücü veya istihbarat altyapısıyla doğrudan bağlantılıdır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Great Firewall Kuantum Anahtar Dağıtımı (QKD) Entegrasyonu</strong></td>
+                <td>CAS</td>
+                <td><span class="pill pill-red">Doğrudan Askeri / Ulusal Güvenlik Entegrasyonu</span></td>
+                <td><strong>95 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Harp kabiliyeti, stratejik nükleer/uzay gücü veya istihbarat altyapısıyla doğrudan bağlantılıdır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Kuantum Haberleşme Uydusu Micius Prototip Çalışmaları</strong></td>
+                <td>CAS / USTC</td>
+                <td><span class="pill pill-red">Doğrudan Askeri / Ulusal Güvenlik Entegrasyonu</span></td>
+                <td><strong>95 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Harp kabiliyeti, stratejik nükleer/uzay gücü veya istihbarat altyapısıyla doğrudan bağlantılıdır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>SMEE 28nm İmmersiyon DUV Litografi Tarayıcısı</strong></td>
+                <td>SMEE</td>
+                <td><span class="pill pill-red">Doğrudan Askeri / Ulusal Güvenlik Entegrasyonu</span></td>
+                <td><strong>95 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Harp kabiliyeti, stratejik nükleer/uzay gücü veya istihbarat altyapısıyla doğrudan bağlantılıdır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Guowang (GW) 13.000 Uyduluk Mega-Takımyıldızı</strong></td>
+                <td>China Satellite Network Group</td>
+                <td><span class="pill pill-red">Doğrudan Askeri / Ulusal Güvenlik Entegrasyonu</span></td>
+                <td><strong>95 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Harp kabiliyeti, stratejik nükleer/uzay gücü veya istihbarat altyapısıyla doğrudan bağlantılıdır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>WS-15 Turbofan Beşinci Nesil Savaş Uçağı Motoru</strong></td>
+                <td>AECC (Aero Engine Corp of China)</td>
+                <td><span class="pill pill-red">Doğrudan Askeri / Ulusal Güvenlik Entegrasyonu</span></td>
+                <td><strong>95 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Harp kabiliyeti, stratejik nükleer/uzay gücü veya istihbarat altyapısıyla doğrudan bağlantılıdır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Nadir Toprak Elementleri ve Galyum-Germanyum İhracat Kotaları</strong></td>
+                <td>Çin Ticaret Bakanlığı (MOFCOM)</td>
+                <td><span class="pill pill-red">Doğrudan Askeri / Ulusal Güvenlik Entegrasyonu</span></td>
+                <td><strong>95 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Harp kabiliyeti, stratejik nükleer/uzay gücü veya istihbarat altyapısıyla doğrudan bağlantılıdır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>BeiDou-3 Küresel Konumlandırma ve Çift Kullanımlı Entegrasyon</strong></td>
+                <td>Çin Askeri Komisyonu / CNSA</td>
+                <td><span class="pill pill-red">Doğrudan Askeri / Ulusal Güvenlik Entegrasyonu</span></td>
+                <td><strong>95 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Harp kabiliyeti, stratejik nükleer/uzay gücü veya istihbarat altyapısıyla doğrudan bağlantılıdır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>SMIC 7nm ve 5nm Çip Üretim Süreçleri</strong></td>
+                <td>SMIC</td>
+                <td><span class="pill pill-gold">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</span></td>
+                <td><strong>75 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ticari görünümün altında güçlü taktik/operasyonel askeri veya gözetim kullanım potansiyeli taşır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Huawei 6G Ağ Standartları ve Patent Başvuruları</strong></td>
+                <td>Huawei</td>
+                <td><span class="pill pill-gold">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</span></td>
+                <td><strong>75 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ticari görünümün altında güçlü taktik/operasyonel askeri veya gözetim kullanım potansiyeli taşır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Yapay Zeka Destekli Otonom Dron Sürüsü (DJI)</strong></td>
+                <td>DJI</td>
+                <td><span class="pill pill-gold">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</span></td>
+                <td><strong>75 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ticari görünümün altında güçlü taktik/operasyonel askeri veya gözetim kullanım potansiyeli taşır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Şanghay Akıllı Şehir Kameraları Yüz Tanıma Entegrasyonu</strong></td>
+                <td>SenseTime</td>
+                <td><span class="pill pill-gold">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</span></td>
+                <td><strong>75 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ticari görünümün altında güçlü taktik/operasyonel askeri veya gözetim kullanım potansiyeli taşır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Huawei Ascend 910C AI Hızlandırıcı ve CANN Ekosistemi</strong></td>
+                <td>Huawei HiSilicon</td>
+                <td><span class="pill pill-gold">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</span></td>
+                <td><strong>75 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ticari görünümün altında güçlü taktik/operasyonel askeri veya gözetim kullanım potansiyeli taşır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Empyrean Yerli EDA Çip Tasarım Yazılım Paketi</strong></td>
+                <td>Empyrean Technology</td>
+                <td><span class="pill pill-gold">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</span></td>
+                <td><strong>75 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ticari görünümün altında güçlü taktik/operasyonel askeri veya gözetim kullanım potansiyeli taşır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>Chang'e 6 Ay Karanlık Yüzü Otomasyonlu Numune Getirme</strong></td>
+                <td>CNSA / CASC</td>
+                <td><span class="pill pill-gold">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</span></td>
+                <td><strong>75 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ticari görünümün altında güçlü taktik/operasyonel askeri veya gözetim kullanım potansiyeli taşır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>BGI Group Ulusal Gen Bankası ve Sentetik Biyoloji</strong></td>
+                <td>BGI Group</td>
+                <td><span class="pill pill-gold">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</span></td>
+                <td><strong>75 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ticari görünümün altında güçlü taktik/operasyonel askeri veya gözetim kullanım potansiyeli taşır.</td>
+              </tr>
+            
+              <tr>
+                <td><strong>C919 Yolcu Uçağı ve Yerli CJ-1000A Motor Uçuş Testleri</strong></td>
+                <td>COMAC / AECC</td>
+                <td><span class="pill pill-gold">Çift Kullanımlı (Dual-Use) Kritik Teknoloji</span></td>
+                <td><strong>75 / 100</strong></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ticari görünümün altında güçlü taktik/operasyonel askeri veya gözetim kullanım potansiyeli taşır.</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 4: AKTÖRLER -->
+    <div id="tab-actors" class="tab-content">
+      <div class="card">
+        <h2>Çin Teknoloji Ekosisteminin Kilit Aktörleri ve Şirketleri</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Kuruluş / Şirket</th>
+              <th>Tip</th>
+              <th>Odak Alanları</th>
+              <th>Yaptırım Durumu</th>
+              <th>Stratejik Rol</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>
+                  <strong>Huawei Technologies</strong><br>
+                  <small style="color: var(--text-muted);">华为技术有限公司</small>
+                </td>
+                <td>Özel Teknoloji Devi</td>
+                <td><small>5G/6G • Ascend AI Çipleri • HarmonyOS • Akıllı Otomotiv</small></td>
+                <td><span class="pill pill-red">US Entity List / FDP Rule</span></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Teknolojik bağımsızlığın amiral gemisi, alternatif çip ve işletim sistemi ekosistem lideri.</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <strong>SMIC (Semiconductor Manufacturing International)</strong><br>
+                  <small style="color: var(--text-muted);">中芯国际</small>
+                </td>
+                <td>Devlet Destekli Yarı İletken Dökümhanesi</td>
+                <td><small>7nm / 14nm / 28nm Mantık Devreleri • DUV Çoklu Pozlama</small></td>
+                <td><span class="pill pill-red">US Entity List</span></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Çin'in TSMC'ye karşı en gelişmiş dökümhane alternatifi.</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <strong>CATL (Contemporary Amperex Technology)</strong><br>
+                  <small style="color: var(--text-muted);">宁德时代</small>
+                </td>
+                <td>Özel Batarya Devi</td>
+                <td><small>LFP Bataryalar • Sodyum-İyon • Shenxing Ultra Hızlı Şarj • Qilin CTP</small></td>
+                <td><span class="pill pill-green">Kısıtlama Yok / Küresel Pazar Lideri</span></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Küresel elektrikli araç batarya pazarının %37'sini kontrol eden tekel üretici.</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <strong>BYD Company</strong><br>
+                  <small style="color: var(--text-muted);">比亚迪</small>
+                </td>
+                <td>Dikey Entegre Otomotiv ve Batarya Devi</td>
+                <td><small>Blade Battery • DM-i Hibrit Sistemleri • Elektrikli Otomobil • SiC Yarı İletken</small></td>
+                <td><span class="pill pill-green">AB ve ABD Ek Gümrük Tarifeleri</span></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Dünyanın en çok satan elektrikli ve şarj edilebilir hibrit araç üreticisi.</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <strong>DeepSeek (Hangzhou High-Flyer)</strong><br>
+                  <small style="color: var(--text-muted);">深度求索</small>
+                </td>
+                <td>Bağımsız Yapay Zeka Araştırma Laboratuvarı</td>
+                <td><small>Açık Ağırlıklı Büyük Dil Modelleri • MoE Mimarisi • Mantıksal Akıl Yürütme (R1)</small></td>
+                <td><span class="pill pill-green">Kısıtlama Yok</span></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Verimli mimari tasarım ile donanım kısıtlamalarını aşan küresel AI inovasyon öncüsü.</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <strong>CASC (China Aerospace Science and Technology)</strong><br>
+                  <small style="color: var(--text-muted);">中国航天科技集团</small>
+                </td>
+                <td>Merkezi Kamu İktisadi Teşekkülü (KİT)</td>
+                <td><small>Uzun Yürüyüş Roketleri • Tiangong Uzay İstasyonu • Chang'e Ay Keşif • BeiDou</small></td>
+                <td><span class="pill pill-red">US CMIC / Entity List</span></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Çin'in uzay hegemonyası ve stratejik füze savunma omurgası.</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <strong>CAS (Chinese Academy of Sciences)</strong><br>
+                  <small style="color: var(--text-muted);">中国科学院</small>
+                </td>
+                <td>Ulusal Bilimler Akademisi</td>
+                <td><small>Kuantum Bilişim • Fotonik • Sentetik Biyoloji • Temel Fizik</small></td>
+                <td><span class="pill pill-green">Bağlı Enstitülerin Bir Kısmı Listede</span></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Ülkedeki 100'den fazla araştırma enstitüsünü koordine eden temel bilim beyni.</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <strong>SMEE (Shanghai Micro Electronics Equipment)</strong><br>
+                  <small style="color: var(--text-muted);">上海微电子装备</small>
+                </td>
+                <td>Devlet Destekli Ekipman Üreticisi</td>
+                <td><small>DUV / İmmersiyon Litografi Tarayıcıları • Gelişmiş Paketleme</small></td>
+                <td><span class="pill pill-red">US Entity List</span></td>
+                <td style="font-size: 13px; color: var(--text-muted);">ASML tekeline karşı Çin'in tek litografi makinesi geliştiricisi.</td>
+              </tr>
+            
+              <tr>
+                <td>
+                  <strong>Seven Sons of National Defense (国防七子)</strong><br>
+                  <small style="color: var(--text-muted);">国防七校 (Beihang, BIT, Harbin IT, NWPU, vb.)</small>
+                </td>
+                <td>Savunma ve Havacılık Üniversiteleri</td>
+                <td><small>Hipersonik • Nükleer Denizaltı • Hayalet Uçak • Siber Harp • Radar</small></td>
+                <td><span class="pill pill-red">US Entity List (Tüm Üniversiteler)</span></td>
+                <td style="font-size: 13px; color: var(--text-muted);">Askeri-Sivil Entegrasyon doktrininin en kritik mühendislik ve Ar-Ge fidanlığı.</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 5: ÇAPRAZ SİNERJİLER -->
+    <div id="tab-synergies" class="tab-content">
+      <div class="card">
+        <h2>Çapraz Teknoloji Sinerjileri ve Küresel Hegemonya Projeksiyonları</h2>
+        <div class="synergy-grid">
+          
+            <div class="synergy-item">
+              <h3>Kuantum Güvenlikli Uydu ve Fiber İletişim Ağı</h3>
+              <div style="margin-bottom: 8px;">
+                <span class="pill pill-gold">kuantum</span> <span class="pill pill-gold">uzay</span> <span class="pill pill-gold">telekom</span> 
+              </div>
+              <p><strong>Teknolojik Etki:</strong> Hacklenemez stratejik askeri komuta-kontrol ve diplomatik haberleşme.</p>
+              <div class="synergy-geo">
+                <strong>Jeopolitik Sonuç:</strong> Batı sinyal istihbaratını (SIGINT) Çin sınırlarında tamamen körleştirme kabiliyeti.
+              </div>
+            </div>
+          
+            <div class="synergy-item">
+              <h3>Bilişsel Otonomi ve Sürü Robotik Entegrasyonu</h3>
+              <div style="margin-bottom: 8px;">
+                <span class="pill pill-gold">yapay-zeka</span> <span class="pill pill-gold">uzay</span> <span class="pill pill-gold">robotik</span> 
+              </div>
+              <p><strong>Teknolojik Etki:</strong> GPS bağımsız insansız hava, kara ve deniz otonom taarruz sürüleri.</p>
+              <div class="synergy-geo">
+                <strong>Jeopolitik Sonuç:</strong> Tayvan Boğazı ve Güney Çin Denizi senaryolarında asimetrik satürasyon üstünlüğü.
+              </div>
+            </div>
+          
+            <div class="synergy-item">
+              <h3>Yarı İletken Ambargolarına Karşı Fotonik ve MoE Mimarisi</h3>
+              <div style="margin-bottom: 8px;">
+                <span class="pill pill-gold">yarıiletken</span> <span class="pill pill-gold">yapay-zeka</span> 
+              </div>
+              <p><strong>Teknolojik Etki:</strong> Donanım kısıtlarını algoritma verimliliği (DeepSeek) ve ışık tabanlı çiplerle aşma.</p>
+              <div class="synergy-geo">
+                <strong>Jeopolitik Sonuç:</strong> ABD ihracat kontrollerinin (GPU ve EUV kısıtlamaları) etki sahasını hızla daraltma.
+              </div>
+            </div>
+          
+            <div class="synergy-item">
+              <h3>Batarya ve Nadir Maden İhracat Kontrolü (Asimetrik Tedarik Kılıcı)</h3>
+              <div style="margin-bottom: 8px;">
+                <span class="pill pill-gold">batarya</span> <span class="pill pill-gold">yarıiletken</span> <span class="pill pill-gold">politika</span> 
+              </div>
+              <p><strong>Teknolojik Etki:</strong> Küresel EV tedarik zinciri tekelini galyum, germanyum ve grafit kotalarıyla silah haline getirme.</p>
+              <div class="synergy-geo">
+                <strong>Jeopolitik Sonuç:</strong> Batı otomotiv ve savunma sanayisini kritik ham madde arz krizleriyle yüzleştirme.
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: DOKÜMAN KÜTÜPHANESİ -->
+    <div id="tab-docs" class="tab-content">
+      <div class="card">
+        <h2>İncelenen Stratejik Belgeler ve TRL Skorları</h2>
+        <input type="text" id="docSearch" class="search-box" placeholder="Belge başlığı, TRL veya kanıt kelimesi ara..." onkeyup="filterDocs()">
+        <table id="docsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Başlık</th>
+              <th>TRL Seviyesi</th>
+              <th>Güven Skoru</th>
+              <th>Tespit Edilen Kanıtlar</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td><code>doc-1</code></td>
+                <td><strong>SMIC 7nm ve 5nm Çip Üretim Süreçleri</strong></td>
+                <td><span class="pill pill-gold">TRL-5</span></td>
+                <td>%98</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  seri üretim, ticari, pilot üretim, pilot, entegre prototip, laboratuvar ölçekli entegre, laboratuvar ölçekli, prototip
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-2</code></td>
+                <td><strong>Baidu Ernie Bot 4.0 LLM Yetenek Değerlendirmesi</strong></td>
+                <td><span class="pill pill-red">TRL-1</span></td>
+                <td>%98</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  araştırma makalesi, araştırma, temel ilkeler, kuramsal
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-3</code></td>
+                <td><strong>Huawei 6G Ağ Standartları ve Patent Başvuruları</strong></td>
+                <td><span class="pill pill-red">TRL-1</span></td>
+                <td>%86</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  tasarım aşaması, temel teorileri, teori
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-4</code></td>
+                <td><strong>CATL Sodyum-İyon ve Katı Hal Batarya Geliştirme</strong></td>
+                <td><span class="pill pill-red">TRL-4</span></td>
+                <td>%74</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  laboratuvar testi, simülasyon
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-5</code></td>
+                <td><strong>Tiangong Uzay İstasyonu Robotik Kol Entegrasyonu</strong></td>
+                <td><span class="pill pill-green">TRL-8</span></td>
+                <td>%62</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  kalifiye
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-6</code></td>
+                <td><strong>Great Firewall Kuantum Anahtar Dağıtımı (QKD) Entegrasyonu</strong></td>
+                <td><span class="pill pill-red">TRL-3</span></td>
+                <td>%86</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  kavram kanıtlama, analitik çalışma, kavram
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-7</code></td>
+                <td><strong>Çin Devlet Konseyi 'Made in China 2025' İlerleme Raporu</strong></td>
+                <td><span class="pill pill-green">TRL-9</span></td>
+                <td>%74</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  operasyonel kullanım, yaygınlaştırma
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-8</code></td>
+                <td><strong>Yapay Zeka Destekli Otonom Dron Sürüsü (DJI)</strong></td>
+                <td><span class="pill pill-gold">TRL-6</span></td>
+                <td>%98</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  prototip gösterimi, gösterim, sistemi doğrulamıştır, prototip
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-9</code></td>
+                <td><strong>Fotonik Çip Laboratuvar Deneyleri (Tsinghua Üniversitesi)</strong></td>
+                <td><span class="pill pill-red">TRL-4</span></td>
+                <td>%86</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  laboratuvar deneyi, simülasyon, araştırma
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-10</code></td>
+                <td><strong>BYD Blade Batarya Güvenlik ve Saha Testleri</strong></td>
+                <td><span class="pill pill-gold">TRL-7</span></td>
+                <td>%98</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  ticari, saha denemesi, pilot sürüş, pilot
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-11</code></td>
+                <td><strong>Şanghay Akıllı Şehir Kameraları Yüz Tanıma Entegrasyonu</strong></td>
+                <td><span class="pill pill-green">TRL-9</span></td>
+                <td>%62</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  sahada aktif
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-12</code></td>
+                <td><strong>Kuantum Haberleşme Uydusu Micius Prototip Çalışmaları</strong></td>
+                <td><span class="pill pill-gold">TRL-5</span></td>
+                <td>%74</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  entegre prototip, prototip
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-13</code></td>
+                <td><strong>DeepSeek-V3 ve R1 Akıl Yürütme Mimarisi</strong></td>
+                <td><span class="pill pill-green">TRL-9</span></td>
+                <td>%98</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  commercial, deployed, operasyonel kullanım, sahada kanıtlanmış
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-14</code></td>
+                <td><strong>Huawei Ascend 910C AI Hızlandırıcı ve CANN Ekosistemi</strong></td>
+                <td><span class="pill pill-gold">TRL-7</span></td>
+                <td>%98</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  kalifiye, pilot üretim, operasyonel ortam test, pilot
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-15</code></td>
+                <td><strong>SMEE 28nm İmmersiyon DUV Litografi Tarayıcısı</strong></td>
+                <td><span class="pill pill-gold">TRL-6</span></td>
+                <td>%98</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  saha denemesi, prototip gösterimi, gösterim, prototip
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-16</code></td>
+                <td><strong>Empyrean Yerli EDA Çip Tasarım Yazılım Paketi</strong></td>
+                <td><span class="pill pill-green">TRL-9</span></td>
+                <td>%74</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  ticari, simülasyon
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-17</code></td>
+                <td><strong>Chang'e 6 Ay Karanlık Yüzü Otomasyonlu Numune Getirme</strong></td>
+                <td><span class="pill pill-red">TRL-3</span></td>
+                <td>%40</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  Varsayılan Seviye
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-18</code></td>
+                <td><strong>Guowang (GW) 13.000 Uyduluk Mega-Takımyıldızı</strong></td>
+                <td><span class="pill pill-gold">TRL-7</span></td>
+                <td>%86</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  saha denemesi, pilot fazı, pilot
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-19</code></td>
+                <td><strong>WS-15 Turbofan Beşinci Nesil Savaş Uçağı Motoru</strong></td>
+                <td><span class="pill pill-green">TRL-9</span></td>
+                <td>%74</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  seri üretim, kalifikasyon
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-20</code></td>
+                <td><strong>Unitree ve Fourier İnsansı Robotik Bedenlenmiş Yapay Zeka</strong></td>
+                <td><span class="pill pill-red">TRL-4</span></td>
+                <td>%98</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  gösterim, entegre prototip, prototip, simülasyon ve test, simülasyon
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-21</code></td>
+                <td><strong>BGI Group Ulusal Gen Bankası ve Sentetik Biyoloji</strong></td>
+                <td><span class="pill pill-green">TRL-9</span></td>
+                <td>%74</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  deployed, yaygınlaştırma
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-22</code></td>
+                <td><strong>Nadir Toprak Elementleri ve Galyum-Germanyum İhracat Kotaları</strong></td>
+                <td><span class="pill pill-red">TRL-3</span></td>
+                <td>%40</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  Varsayılan Seviye
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-23</code></td>
+                <td><strong>BeiDou-3 Küresel Konumlandırma ve Çift Kullanımlı Entegrasyon</strong></td>
+                <td><span class="pill pill-green">TRL-9</span></td>
+                <td>%86</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  seri üretim, operasyonel kullanım, kullanımda
+                </td>
+              </tr>
+            
+              <tr>
+                <td><code>doc-24</code></td>
+                <td><strong>C919 Yolcu Uçağı ve Yerli CJ-1000A Motor Uçuş Testleri</strong></td>
+                <td><span class="pill pill-gold">TRL-7</span></td>
+                <td>%86</td>
+                <td style="font-size: 13px; color: var(--text-muted);">
+                  saha denemesi, operasyonel ortam test, uçan test yatağı
+                </td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      
+      const target = document.getElementById(tabId);
+      if (target) target.classList.add('active');
+      
+      const btn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (btn) btn.classList.add('active');
+    }
+
+    function filterDocs() {
+      const input = document.getElementById('docSearch');
+      const filter = input.value.toLowerCase();
+      const rows = document.querySelectorAll('#docsTable tbody tr');
+      
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(filter) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

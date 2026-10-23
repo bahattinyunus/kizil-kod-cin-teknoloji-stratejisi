@@ -2,25 +2,28 @@
 
 # 🟥 Kızıl Kod: Çin Teknoloji Stratejisi & Küresel Hegemonya
 
-*"Işığını gizle, zamanını bekle."* — **Deng Xiaoping**
+[![Node.js Version](https://img.shields.io/badge/Node.js-v24.x%20(Native%20TS)-green.svg)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-ES2022-blue.svg)](https://www.typescriptlang.org)
+[![Tests](https://img.shields.io/badge/Tests-14%2F14%20Passing-brightgreen.svg)](tests/)
+[![TRL Framework](https://img.shields.io/badge/TRL-NASA%20%2F%20DoD%20Standard-red.svg)](src/trl.ts)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Tıpkı küçük bir çadırda filizlenip kıtalara kök salan ulu bir çınar gibi; bir küresel gücün inşası da göze görünmeyen, on yıllarca sabırla işlenen sağlam temellere dayanır. Bu depo, o temellerin dijital ve stratejik haritasıdır.
+> *"Işığını gizle, zamanını bekle."* — **Deng Xiaoping (韬光养晦)**  
+> *"Mükemmellik, her savaşta çarpışarak kazanmak değil; düşmanın direncini hiç savaşmadan kırmaktır."* — **Sun Tzu**
+
+Tıpkı küçük bir çadırda filizlenip kıtalara kök salan ulu bir çınar gibi; bir küresel gücün inşası da göze görünmeyen, on yıllarca sabırla işlenen sağlam temellere dayanır. Bu depo, o temellerin dijital, analitik ve stratejik haritasıdır.
 
 ---
 
-> *"Mükemmellik, her savaşta çarpışarak kazanmak değil; düşmanın direncini hiç savaşmadan kırmaktır."* — **Sun Tzu**
-
 ## 📌 Projenin Amacı ve Felsefesi
 
-Bu depo, Çin’in son çeyrek asırda ucuz üretim atölyesinden **küresel bir teknoloji süper gücüne** nasıl dönüştüğünü anlamak, haritalandırmak ve analiz etmek için kurulmuş bağımsız bir bilgi mimarisidir.
+Bu proje, Çin’in son çeyrek asırda ucuz üretim atölyesinden **küresel bir teknoloji süper gücüne** nasıl dönüştüğünü anlamak, haritalandırmak ve analiz etmek için kurulmuş bağımsız bir stratejik istihbarat ve analiz platformudur.
 
-Buradaki amaç basit bir "ne yapıyorlar?" sorusunu yanıtlamak değildir. Biz köklere, nedenselliğe ve sistematiğe iniyoruz:
+Buradaki amaç basit bir *"ne yapıyorlar?"* sorusunu yanıtlamak değildir:
 
-* 👉 **Nasıl yapıyorlar?** (Devlet, üniversite ve özel sektörün asimetrik entegrasyonu)
-* 👉 **Neden bu kadar hızlılar?** (Tersine mühendislikten, inovatif öncülüğe geçiş ivmesi)
-* 👉 **Gelecekte dünyayı nasıl etkileyecekler?** (Teknolojik standartların yeniden yazılması)
-
-Bu repo, yüzeysel okumaların ötesine geçerek okuyucuya bir **stratejik farkındalık** (strategic awareness) kazandırmayı hedefler. Bir tohumun toprağı yararak devasa bir ekosisteme dönüşmesi gibi, Çin'in teknolojik büyümesini de sıfırdan zirveye, modül modül inceliyoruz.
+* 👉 **Nasıl yapıyorlar?** (Devlet-Kapitalizmi, akademi ve özel sektörün asimetrik entegrasyonu)
+* 👉 **Neden bu kadar hızlılar?** (Tersine mühendislikten, algoritmik ve donanımsal öncülüğe geçiş ivmesi)
+* 👉 **Gelecekte dünyayı nasıl etkileyecekler?** (Teknolojik standartların ve tedarik zincirlerinin yeniden yazılması)
 
 ---
 
@@ -28,108 +31,129 @@ Bu repo, yüzeysel okumaların ötesine geçerek okuyucuya bir **stratejik fark�
 
 > *"Sistemi anlamayan, o sistemin sadece bir parçası olur."*
 
-Çin’in teknolojik atılımı izole edilmiş başarıların bir toplamı değil; devasa, entegre ve kusursuz işleyen bir mekanizmadır. Bu depoda analizleri şu dört ana sütun üzerine inşa ediyoruz:
+Çin’in teknolojik atılımı izole edilmiş münferit başarıların bir toplamı değil; devasa, entegre ve kusursuz işleyen bir mekanizmadır. Proje şu dört ana sütun üzerine inşa edilmiştir:
 
 1. 🏛️ **Tekno-Milliyetçilik ve Devlet Politikaları:** "Made in China 2025" ve "China Standards 2035" vizyonlarının anatomisi.
 2. 📊 **Dijital Otoriterizm ve Veri Hegemonyası:** Verinin yeni petrol olduğu dünyada, devasa nüfusun bir "Büyük Veri" laboratuvarı olarak kullanılması.
-3. 🏭 **Üretim Ekosistemi (Fabrika 4.0):** Sadece yazılım değil, dünyadaki tedarik zincirinin fiziksel donanımını (hardware) elde tutma gücü.
+3. 🏭 **Üretim Ekosistemi (Fabrika 4.0):** Dünyadaki tedarik zincirinin fiziksel donanımını (hardware) elde tutma gücü.
 4. ⏳ **Asırlık Vizyon (Uzun Vadeli Planlama):** Batı'nın 4 yıllık seçim döngülerine karşılık, Çin'in 50 ve 100 yıllık maraton koşucusu zihniyeti.
+
+---
+
+## 🛠️ Yerleşik Analitik Araçlar ve İstihbarat Motoru
+
+Bu depo yalnızca teorik makalelerden ibaret değildir; bünyesinde **Node.js 24 yerel TypeScript motoruyla** çalışan modüler stratejik değerlendirme yazılımları barındırır:
+
+```
+kizil-kod-cin-teknoloji-stratejisi/
+├── src/
+│   ├── index.ts        # Programatik API giriş noktası
+│   ├── cli.ts          # Zengin terminal arayüzü ve komut yöneticisi
+│   ├── trl.ts          # Çok dilli Teknolojik Olgunluk (TRL 1-9) motoru
+│   ├── chokepoints.ts  # Çin'in "Boğulma Noktaları" (卡脖子 - Ka Bo Zi) takipçisi
+│   ├── mcf.ts          # Askeri-Sivil Entegrasyon (Military-Civil Fusion) analizörü
+│   ├── analysis.ts     # Çapraz sinerjiler ve Stratejik Özerklik Endeksi
+│   └── dashboard.ts    # İnteraktif HTML/Web istihbarat paneli üreticisi
+├── data/
+│   ├── sample.json        # 24 stratejik vaka ve aktör eşleştirmesi
+│   ├── text_samples.json  # Detaylı vaka metinleri ve kanıt kaynakları
+│   ├── chokepoints.json   # 10 kritik stratejik darboğaz ve ikame hedefleri
+│   └── actors.json        # Kilit teknoloji devleri ve savunma akademileri
+├── tests/                 # Node:test tabanlı 14 birim ve entegrasyon testi
+├── dashboard.html         # Tek tıklamayla açılabilen görsel web kokpiti
+└── RESEARCH_REPORT.md     # Kapsamlı jeopolitik ve teknolojik araştırma raporu
+```
+
+---
+
+## 🚀 Hızlı Başlangıç (CLI Kullanımı)
+
+Sıfır ek bağımlılıkla (Zero-Dependency), modern Node.js üzerinde doğrudan çalışır:
+
+```bash
+# 1. Genel Stratejik TRL & Özerklik Analizini Çalıştır
+npm run cli
+
+# 2. Belge Bazlı TRL Seviyeleri ve Metin Kanıtlarını İncele
+npm run cli:trl
+
+# 3. Çin'in Boğulma Noktalarını (卡脖子) ve Yerli İkame Oranlarını Gör
+npm run cli:chokepoints
+
+# 4. Askeri-Sivil Entegrasyon (Dual-Use MCF) Risk Dağılımını Listele
+npm run cli:mcf
+
+# 5. Görsel İnteraktif İstihbarat Panelini (HTML Dashboard) Oluştur
+npm run cli:dashboard
+
+# 6. Test Paketini Koş (14/14 test)
+npm test
+```
+
+---
+
+## 📊 Örnek CLI Çıktısı
+
+```
+========================================================================
+          KIZIL KOD — ÇİN TEKNOLOJİ STRATEJİSİ RAPORLAMA ARACI
+========================================================================
+
+📢 Özet: Toplam analiz edilen stratejik belge: 24. Çin teknoloji ekosisteminin
+genel stratejik bağımsızlık skoru %62/100 olarak ölçülmüştür.
+
+-------------------------------------------------------------------------------------------------
+                        TEKNOLOJİK OLGUNLUK (TRL) & STRATEJİK ÖZERKLİK MATRİSİ
+-------------------------------------------------------------------------------------------------
+Teknoloji Alanı    | Belge  | Ort. TRL  | Özerklik %  | Olgunluk Durumu
+-------------------------------------------------------------------------------------------------
+biyoteknoloji      |      1 |         9 |         %99 | Ticari ve Operasyonel (TRL 8-9)
+savunma            |      3 |       8.3 |         %92 | Ticari ve Operasyonel (TRL 8-9)
+siber-güvenlik     |      3 |         7 |         %78 | Prototip ve Gösterim (TRL 5-7)
+havacılık          |      1 |         7 |         %54 | Prototip ve Gösterim (TRL 5-7)
+uzay               |      7 |       6.7 |         %74 | Prototip ve Gösterim (TRL 5-7)
+yarıiletken        |      7 |       6.1 |         %44 | Prototip ve Gösterim (TRL 5-7)
+yapay-zeka         |      6 |         6 |         %67 | Prototip ve Gösterim (TRL 5-7)
+telekom            |      4 |       5.5 |         %61 | Prototip ve Gösterim (TRL 5-7)
+batarya            |      3 |       4.7 |         %65 | Araştırma ve Kavramsal (TRL 1-4)
+politika           |      6 |       4.5 |         %50 | Araştırma ve Kavramsal (TRL 1-4)
+kuantum            |      3 |         4 |         %44 | Araştırma ve Kavramsal (TRL 1-4)
+robotik            |      1 |         4 |         %44 | Araştırma ve Kavramsal (TRL 1-4)
+-------------------------------------------------------------------------------------------------
+```
 
 ---
 
 ## 🔬 İncelenen Ana Alanlar (Teknoloji Matrisi)
 
-Aşağıdaki her bir alan, kendi içinde derinlemesine araştırma notları, vaka analizleri (case studies) ve teknik okumalar içerir.
-
-### 🤖 Yapay Zeka ve Bilişsel Sistemler
-
-* Kusursuz Gözetim: Yüz tanıma sistemleri, davranışsal analiz ve Akıllı Şehir (Smart City) entegrasyonları.
-* NLP ve LLM Gelişimi: Çin'in Batılı modellere (ChatGPT, vb.) karşı yerli dil modelleri (Ernie Bot vd.) geliştirme stratejisi.
-* **Aşil Topuğu:** Veri gücü muazzam olsa da, bu sistemleri eğitecek çiplerdeki dışa bağımlılık.
-
-### 🧠 Yarı İletkenler (Çip Savaşları / Chip War)
-
-> *"Modern dünyanın kalbi silikondan atıyor; bu kalbi kim üretirse, geleceğin ritmini o belirler."*
-
-* **SMIC ve Yerli Ekosistem:** Ambargolara rağmen 7nm ve 5nm üretim süreçlerindeki "sessiz" ilerleyiş.
-* Tedarik Zinciri Kırılganlığı: Litografi makineleri (ASML) ambargosu ve Çin'in alternatif fotonik çip arayışları.
-* Galyum ve Germanyum kozu: Nadir toprak elementlerindeki tekel gücü.
-
-### 📡 Telekomünikasyon ve Altyapı (5G / 6G)
-
-* **Huawei Paradigması:** Bir şirketin nasıl ulusal güvenlik meselesine dönüştüğü.
-* 6G Vizyonu: Dünya daha 5G'yi yeni kurarken, uzay-hava-yer entegre 6G ağlarının patent savaşları.
-* Dijital İpek Yolu (Digital Silk Road): Gelişmekte olan ülkelerin altyapısını kurarak elde edilen kalıcı jeopolitik nüfuz.
-
-### 🚀 Uzay ve Havacılık (Kozmik Hakimiyet)
-
-* **Tiangong:** Uluslararası Uzay İstasyonu'na (ISS) alternatif, tamamen bağımsız Çin Uzay İstasyonu.
-* Ay'ın Karanlık Yüzü ve Mars: Chang'e görevleri ve helyum-3 madenciliği hedefleri.
-* Körleştirme Stratejisi: Anti-uydu (ASAT) silahları ve yörünge güvenliği.
-
-### 🔋 Enerji, Batarya ve Yeni Mobilite
-
-* Elektrikli Araç (EV) Devrimi: BYD'nin yükselişi ve Tesla ile olan rekabet.
-* **CATL ve Lityum Krallığı:** Dünyanın batarya üretim tekelinin Çin'in elinde toplanması.
-* Güneş Paneli ve Rüzgar Türbini tedarik zincirindeki ezici üstünlük.
-
-### 🕵️‍♂️ Siber Boyut ve Dijital Duvarlar
-
-> *"Kendini savunmak istiyorsan, kalenin duvarlarını sağlam, kapılarını kontrol altında tut."*
-
-* **Great Firewall (Çin Seddi 2.0):** Bilgi akışının devlet eliyle süzülmesi ve izole dijital ekosistem.
-* Sosyal Kredi Sistemi (Social Credit System): Algoritmik yönetişim ve toplumsal mühendislik.
-* Siber Taarruz Kapasitesi: Gelişmiş Sürekli Tehditler (APT grupları) ve asimetrik siber savaş doktrini.
+* **🤖 Yapay Zeka ve Bilişsel Sistemler:** DeepSeek açık ağırlıklı MoE mantıksal akıl yürütme mimarisi, Huawei Ascend 910B/C yerli kümeleri ve CANN ekosistemi, Şanghay/Pekin kentsel gözetim ağları.
+* **🧠 Yarı İletkenler (Çip Savaşları):** SMIC DUV çoklu pozlama (7nm/5nm), SMEE 28nm daldırmalı tarayıcılar, Empyrean EDA yazılımı, fotonik çipler ve galyum/germanyum maden kontrolleri.
+* **📡 Telekomünikasyon ve Altyapı:** Huawei 5.5G/6G patentleri, Guowang (GW) 13.000 uyduluk alçak yörünge mega-takımyıldızı, Dijital İpek Yolu.
+* **🔋 Enerji, Batarya ve Yeni Mobilite:** CATL Shenxing ultra hızlı şarj, BYD Blade dikey entegrasyonu, sodyum-iyon ve katı-hal batarya yol haritası.
+* **🚀 Uzay ve Havacılık:** Tiangong Uzay İstasyonu kalıcı operasyonları, Chang'e-6 Ay karanlık yüzü numune başarısı, J-20 WS-15 yerli motoru, C919 ve CJ-1000A uçuş testleri.
+* **🕵️ Siber Boyut ve Kuantum:** Great Firewall QKD entegrasyonu, Micius kuantum uydusu, hacklenemez askeri iletişim hatları.
 
 ---
 
 ## 🏢 Şirket Analizleri: Dijital İmparatorluklar
 
-Çin’in teknoloji gücü sadece bürokrasiden değil, devletin kanatları altında büyüyen dev şirketlerden (Milli Şampiyonlar) gelir. Bu repoda aşağıdaki devlerin anatomisini çıkarıyoruz:
-
 | Şirket | Ana Sektör | Stratejik Rolü | Küresel Etki Alanı |
 | --- | --- | --- | --- |
-| **Huawei** | Telekom / Donanım | Altyapı Hegemonyası, 5G/6G Standartları | Yüksek (Batı'da kısıtlı, Küresel Güney'de dominant) |
-| **Tencent** | Yazılım / Oyun / Sosyal | WeChat ekosistemi, dijital yaşam kontrolü | Çok Yüksek (Veri toplama ve kültürel ihraç) |
-| **Alibaba** | E-ticaret / Bulut | Tedarik zinciri verisi ve FinTech (Ant Group) | Yüksek |
-| **ByteDance** | Algoritma / Medya | TikTok ile küresel zihin/dikkat yönetimi | Zirve (Batı'da en çok tartışılan güç) |
-| **DJI** | Otonom Sistemler | Küresel sivil ve asimetrik askeri drone tekeli | Zirve (Pazarın %70+ hakimi) |
-| **SMIC** | Yarı İletkenler | Çip bağımsızlığının kilit taşı | Kritik (Hayatta kalma mücadelesi veriyor) |
+| **Huawei** | Telekom / Çip / AI | Altyapı Hegemonyası, Ascend & HarmonyOS | Kritik (Küresel Güney'de baskın) |
+| **SMIC** | Yarı İletkenler | Çip bağımsızlığının kilit dökümhanesi | Hayati (7nm/5nm üretim baskısı) |
+| **DeepSeek** | Yapay Zeka (Frontier) | Algoritmik verimlilik ve MoE açık ağırlık | Zirve (Donanım kısıtını kıran güç) |
+| **CATL** | Batarya & Enerji | Küresel EV batarya pazarının %37'si | Mutlak Pazar Lideri |
+| **BYD** | Otomotiv & Hücre | Madenden araca tam dikey entegrasyon | Dünyanın 1 Numaralı NEV Üreticisi |
+| **DJI** | Otonom Dronlar | Küresel sivil ve taktik dron tekeli | Pazarın %70+ hakimi |
+| **CASC / CASIC** | Uzay & Savunma | Roketler, Tiangong, Ay görevleri ve füzeler | Stratejik Uzay Hegemonyası |
 
 ---
 
 ## ⚔️ Jeopolitik Satranç: Küresel Karşılaştırmalar
 
-> *"Savaşı kazanan taraf, savaşa girmeden önce tüm hesaplamaları karargahında yapan taraftır."*
-
-Bu depo olayları bir fanus içinde incelemez; dünyadaki fay hatlarıyla birlikte okur:
-
 * 🇺🇸 **ABD vs Çin:** Tasarım ve İnovasyon (Silikon Vadisi) gücüne karşı; Üretim, Ölçekleme ve Devlet Sübvansiyonu (Shenzhen) gücü.
-* 🇪🇺 **Avrupa vs Çin:** Katı regülasyonlar (GDPR, AI Act) ile korunan pazarın, kontrolsüz ve devasa veriyle beslenen teknoloji fırtınasına karşı hayatta kalma sınavı.
-* 🇹🇼 **Tayvan Faktörü (Kızıl Çizgi):** TSMC'nin varlığı ve adanın dünyadaki teknolojik dengeler için ifade ettiği varoluşsal önem.
-
----
-
-## 📊 Depo İçerik Türleri ve Navigasyon
-
-Bu proje sadece metin yığınlarından oluşmaz. Şunları içerir:
-
-* 📈 **Stratejik Analiz Metinleri:** Derinlemesine makaleler ve sentezler.
-* 🗺️ **Ekosistem Haritaları:** Şirketlerin, devlet fonlarının ve teknolojilerin birbiriyle bağlantılarını gösteren grafikler.
-* ⏳ **Tarihsel Zaman Çizelgeleri (Timelines):** Kararların alındığı anlar ve günümüzdeki sonuçları.
-* 📚 **Genişletilmiş Kaynakça:** Akademik makaleler, think-tank raporları ve sızdırılmış doküman özetleri.
-
----
-
-## 🎯 Kimler İçin?
-
-Eğer sadece kod yazmak istiyorsan, bu depo sana göre olmayabilir. Ancak eğer;
-
-* Dünyanın **arka planında dönen mekanizmaları** anlamak isteyen bir **Yazılım/Sistem Mimarıysan**,
-* Teknolojinin sadece donanım değil, bir **jeopolitik silah** olduğunu fark eden bir **Stratejistsen**,
-* Geleceğin dünyasında nerede konumlanması gerektiğini hesaplayan bir **Girişimciysen**,
-* Veya sadece *"Dünya nereye gidiyor?"* sorusunun cevabını arıyorsan...
-**Doğru yerdesin.**
+* 🇪🇺 **Avrupa vs Çin:** Regülasyonlarla korunan pazarın, sübvanse edilmiş elektrikli araç ve yeşil teknoloji fırtınasına karşı gümrük vergisi arayışı.
+* 🇹🇼 **Tayvan Faktörü (Kızıl Çizgi):** TSMC'nin varlığı ve silikon kalkanının jeostratejik geleceği.
 
 ---
 
@@ -137,28 +161,11 @@ Eğer sadece kod yazmak istiyorsan, bu depo sana göre olmayabilir. Ancak eğer;
 
 > *"Gerçeği arayan, önyargılarını kapıda bırakmalıdır."*
 
-Bu depo bir propaganda aracı, bir taraf tutma platformu veya bir siyasi manifesto **değildir**.
-Tek bir amacı vardır: **Stratejik Gerçekliği anlamak.** Düşmanlaştırmadan veya yüceltmeden, sadece veriler, sistemler ve satranç tahtasındaki hamleler incelenir.
+Bu depo bir propaganda aracı veya siyasi manifesto **değildir**.  
+Tek bir amacı vardır: **Stratejik Gerçekliği anlamak.** Düşmanlaştırmadan veya yüceltmeden; sadece veriler, sistemler ve satranç tahtasındaki hamleler incelenir.
 
 ---
 
-## 🤝 Katkı Sağla (Söğüt Ruhu ile İnşa Et)
+### ⭐ Destek ve Katkı
 
-Büyük yapılar tek bir mimarın değil, inançlı bir vizyonun ve ortak emeğin eseridir. Tıpkı temeli sağlam atılmış bir obanın cihana hükmeden bir yapıya dönüşmesi gibi, bu bilgi havuzunu da birlikte büyütebiliriz.
-
-* Eksik gördüğün bir analizi tamamlayabilirsin.
-* Yeni açıklanan bir regülasyonu / teknolojik hamleyi ekleyebilirsin.
-* Sistem mimarileri hakkında teknik detaylar sunabilirsin.
-
-**Katkı kuralları için CONTRIBUTING.md dosyasını okuyun.**
-
----
-
-### ⭐ Destek ve Takip
-
-Eğer bu depo, dünyayı okuma şekline yeni bir pencere açtıysa:
-
-1. Sağ üst köşeden bir **Star (⭐)** bırakarak bu tohumu sula.
-2. Depoyu kendi ağında paylaşarak bilgi fırtınasını büyüt.
-
-*“Geleceğin teknolojik süper gücü kim olacak?”* sorusunun cevabı, bugün atılan o sessiz adımlarda gizli. O adımları takip etmeye hoş geldin.
+Eğer bu çalışma dünyayı okuma şeklinize yeni bir perspektif kazandırdıysa, sağ üst köşeden bir **Star (⭐)** bırakarak destekleyebilirsiniz. Katkı ve araştırma notu eklemek için Pull Request göndermekten çekinmeyin!

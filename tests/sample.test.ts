@@ -1,5 +1,9 @@
-import { run } from '../src/index';
+import { test, describe, it } from 'node:test';
+import assert from 'node:assert';
+import { run } from '../src/index.ts';
 
-test('runs without throwing', () => {
-  expect(() => run()).not.toThrow();
+describe('Index Module Test', () => {
+  it('runs without throwing', () => {
+    assert.doesNotThrow(() => run());
+  });
 });

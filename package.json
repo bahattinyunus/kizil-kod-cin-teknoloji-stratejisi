@@ -1,21 +1,30 @@
 {
   "name": "kizil-kod-cin-teknoloji-stratejisi",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Kızıl Kod: Çin Teknoloji Stratejisi, TRL Analizi ve Jeopolitik Değerlendirme Platformu",
   "private": true,
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "src/index.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "ts-node-dev --respawn src/index.ts",
-    "cli": "ts-node src/cli.ts",
-    "cli:trl": "ts-node src/cli.ts trl",
-    "test": "jest"
+    "start": "node --experimental-strip-types src/cli.ts",
+    "cli": "node --experimental-strip-types src/cli.ts",
+    "cli:trl": "node --experimental-strip-types src/cli.ts trl",
+    "cli:chokepoints": "node --experimental-strip-types src/cli.ts chokepoints",
+    "cli:mcf": "node --experimental-strip-types src/cli.ts mcf",
+    "cli:report": "node --experimental-strip-types src/cli.ts report",
+    "cli:dashboard": "node --experimental-strip-types src/cli.ts dashboard",
+    "test": "node --experimental-strip-types --test tests/**/*.test.ts"
   },
-  "devDependencies": {
-    "typescript": "^5.1.0",
-    "ts-node-dev": "^2.0.0",
-    "jest": "^29.0.0",
-    "ts-jest": "^29.0.0",
-    "@types/jest": "^29.0.0"
-  }
+  "keywords": [
+    "china-tech",
+    "geopolitics",
+    "trl-analysis",
+    "technology-readiness",
+    "semiconductors",
+    "artificial-intelligence",
+    "quantum-computing",
+    "military-civil-fusion"
+  ],
+  "author": "Kızıl Kod Projesi",
+  "license": "MIT"
 }

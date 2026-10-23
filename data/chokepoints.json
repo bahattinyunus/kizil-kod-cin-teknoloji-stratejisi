@@ -1,0 +1,122 @@
+[
+  {
+    "id": "cp-01",
+    "technology": "EUV / İleri DUV Litografi Sistemleri",
+    "domain": "Yarı İletken",
+    "severity": "Kritik",
+    "chineseTerm": "光刻机 (Guang Ke Ji)",
+    "domesticSubstitutionRate": 15,
+    "targetYear": 2028,
+    "foreignMonopolist": "ASML (Hollanda), Nikon / Canon (Japonya)",
+    "chineseChallengers": ["SMEE (Shanghai Micro Electronics)", "CIOMP (Changchun Optik Enstitüsü)"],
+    "description": "7nm altı ve gelişmiş mantık devrelerinin üretimi için zorunlu olan aşırı ultraviyole (EUV) optik aynaları ve lazer kaynakları."
+  },
+  {
+    "id": "cp-02",
+    "technology": "Elektronik Tasarım Otomasyonu (EDA) Yazılımı",
+    "domain": "Yarı İletken",
+    "severity": "Kritik",
+    "chineseTerm": "EDA软件",
+    "domesticSubstitutionRate": 25,
+    "targetYear": 2027,
+    "foreignMonopolist": "Synopsys (ABD), Cadence (ABD), Siemens EDA (Almanya)",
+    "chineseChallengers": ["Empyrean Technology", "Primarius Technologies"],
+    "description": "Milyarlarca transistör içeren gelişmiş çiplerin mantıksal simülasyonu, yerleşimi ve doğrulanmasında kullanılan tekel yazılımlar."
+  },
+  {
+    "id": "cp-03",
+    "technology": "Gelişmiş Fotodirenç (ArF / EUV Photoresist)",
+    "domain": "Kimya / Yarı İletken",
+    "severity": "Kritik",
+    "chineseTerm": "光刻胶",
+    "domesticSubstitutionRate": 18,
+    "targetYear": 2026,
+    "foreignMonopolist": "Tokyo Ohka Kogyo (TOK), JSR, Shin-Etsu (Japonya)",
+    "chineseChallengers": ["Xuzhou B&C Chemical", "Crystal Clear Electronic Material"],
+    "description": "Işık desenini silikon pul üzerine aktaran ultra saf polimer kimyasallar."
+  },
+  {
+    "id": "cp-04",
+    "technology": "RF Alıcı-Verici Çipleri (RF Transceivers & BAW Filtreler)",
+    "domain": "Telekomünikasyon",
+    "severity": "Yüksek",
+    "chineseTerm": "射频芯片与滤波器",
+    "domesticSubstitutionRate": 35,
+    "targetYear": 2026,
+    "foreignMonopolist": "Broadcom (ABD), Skyworks (ABD), Murata (Japonya)",
+    "chineseChallengers": ["Maxscend Microelectronics", "Wuhan Minisensing"],
+    "description": "5G/6G akıllı telefonlarda ve radar sistemlerinde radyo frekans sinyallerini filtreleyen ve işleyen bileşenler."
+  },
+  {
+    "id": "cp-05",
+    "technology": "Ticari Havacılık Yüksek Baypaslı Turbofan Motorları",
+    "domain": "Havacılık / Savunma",
+    "severity": "Kritik",
+    "chineseTerm": "大涵道比涡扇发动机",
+    "domesticSubstitutionRate": 20,
+    "targetYear": 2029,
+    "foreignMonopolist": "CFM International (ABD/Fransa), Pratt & Whitney (ABD), Rolls-Royce (İngiltere)",
+    "chineseChallengers": ["AECC Commercial Aircraft Engine (CJ-1000A / CJ-2000)"],
+    "description": "C919 ve CR929 gibi geniş gövdeli ticari yolcu uçakları için gerekli yüksek güvenilirlikli yakıt verimli jet motorları."
+  },
+  {
+    "id": "cp-06",
+    "technology": "Hassas Beş Eksenli CNC Takım Tezgahları ve Kontrolörleri",
+    "domain": "İleri Üretim",
+    "severity": "Yüksek",
+    "chineseTerm": "五轴联动数控机床",
+    "domesticSubstitutionRate": 40,
+    "targetYear": 2027,
+    "foreignMonopolist": "DMG Mori (Almanya/Japonya), Mazak (Japonya), Fanuc (Japonya)",
+    "chineseChallengers": ["Dalian Kede Numerical Control", "Shenyang Machine Tool"],
+    "description": "Havacılık, denizaltı pervaneleri ve füze gövdelerinin mikron altı toleransla işlenmesinde kullanılan robotik işleme merkezleri."
+  },
+  {
+    "id": "cp-07",
+    "technology": "Gelişmiş AI Hızlandırıcı GPU'lar ve Derleme Ekosistemleri",
+    "domain": "Yapay Zeka",
+    "severity": "Yüksek",
+    "chineseTerm": "高端AI训练芯片 (CUDA生态)",
+    "domesticSubstitutionRate": 45,
+    "targetYear": 2026,
+    "foreignMonopolist": "NVIDIA (ABD), AMD (ABD)",
+    "chineseChallengers": ["Huawei (Ascend 910 serisi)", "Biren Technology", "Moore Threads"],
+    "description": "Trilyon parametreli frontier yapay zeka modellerinin eğitilmesi için gereken petabayt/s bant genişliğine sahip GPU ve CUDA muadili yazılım katmanı."
+  },
+  {
+    "id": "cp-08",
+    "technology": "Endüstriyel Robot Redüktörleri (RV & Harmonik Redüktörler)",
+    "domain": "Robotik",
+    "severity": "Orta",
+    "chineseTerm": "高精度减速机",
+    "domesticSubstitutionRate": 55,
+    "targetYear": 2025,
+    "foreignMonopolist": "Nabtesco (Japonya), Harmonic Drive Systems (Japonya)",
+    "chineseChallengers": ["Leaderdrive (Leader Harmonious)", "Shantui"],
+    "description": "Endüstriyel ve insansı robot kollarının mikrometrik hassasiyetle konumlanmasını sağlayan tork aktarım mekanizmaları."
+  },
+  {
+    "id": "cp-09",
+    "technology": "Havacılık Sınıfı Karbon Fiber (T800 / T1000 / MJ Serisi)",
+    "domain": "İleri Malzemeler",
+    "severity": "Orta",
+    "chineseTerm": "高性能碳纤维",
+    "domesticSubstitutionRate": 65,
+    "targetYear": 2025,
+    "foreignMonopolist": "Toray Industries (Japonya), Teijin (Japonya), Hexcel (ABD)",
+    "chineseChallengers": ["Zhongfu Shenying Carbon Fiber", "Guangwei Composite"],
+    "description": "Hayalet uçaklar, uzay araçları ve hafif roket gövdeleri için ultra yüksek mukavemetli kompozit elyaf."
+  },
+  {
+    "id": "cp-10",
+    "technology": "Ağır Hizmet Endüstriyel Gaz Türbinleri",
+    "domain": "Enerji",
+    "severity": "Yüksek",
+    "chineseTerm": "重型燃气轮机 (F/H Sınıfı)",
+    "domesticSubstitutionRate": 50,
+    "targetYear": 2027,
+    "foreignMonopolist": "Siemens Energy (Almanya), GE (ABD), Mitsubishi Heavy Industries (Japonya)",
+    "chineseChallengers": ["Dongfang Electric", "Shanghai Electric (G50 / F sınıfı)"],
+    "description": "Yüksek verimli kombine çevrim elektrik santrallerinde ve askeri gemilerde kullanılan devasa gaz türbinleri."
+  }
+]

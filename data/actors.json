@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Huawei Technologies",
+    "chineseName": "华为技术有限公司",
+    "type": "Özel Teknoloji Devi",
+    "focus": ["5G/6G", "Ascend AI Çipleri", "HarmonyOS", "Akıllı Otomotiv"],
+    "sanctionStatus": "US Entity List / FDP Rule",
+    "strategicRole": "Teknolojik bağımsızlığın amiral gemisi, alternatif çip ve işletim sistemi ekosistem lideri."
+  },
+  {
+    "name": "SMIC (Semiconductor Manufacturing International)",
+    "chineseName": "中芯国际",
+    "type": "Devlet Destekli Yarı İletken Dökümhanesi",
+    "focus": ["7nm / 14nm / 28nm Mantık Devreleri", "DUV Çoklu Pozlama"],
+    "sanctionStatus": "US Entity List",
+    "strategicRole": "Çin'in TSMC'ye karşı en gelişmiş dökümhane alternatifi."
+  },
+  {
+    "name": "CATL (Contemporary Amperex Technology)",
+    "chineseName": "宁德时代",
+    "type": "Özel Batarya Devi",
+    "focus": ["LFP Bataryalar", "Sodyum-İyon", "Shenxing Ultra Hızlı Şarj", "Qilin CTP"],
+    "sanctionStatus": "Kısıtlama Yok / Küresel Pazar Lideri",
+    "strategicRole": "Küresel elektrikli araç batarya pazarının %37'sini kontrol eden tekel üretici."
+  },
+  {
+    "name": "BYD Company",
+    "chineseName": "比亚迪",
+    "type": "Dikey Entegre Otomotiv ve Batarya Devi",
+    "focus": ["Blade Battery", "DM-i Hibrit Sistemleri", "Elektrikli Otomobil", "SiC Yarı İletken"],
+    "sanctionStatus": "AB ve ABD Ek Gümrük Tarifeleri",
+    "strategicRole": "Dünyanın en çok satan elektrikli ve şarj edilebilir hibrit araç üreticisi."
+  },
+  {
+    "name": "DeepSeek (Hangzhou High-Flyer)",
+    "chineseName": "深度求索",
+    "type": "Bağımsız Yapay Zeka Araştırma Laboratuvarı",
+    "focus": ["Açık Ağırlıklı Büyük Dil Modelleri", "MoE Mimarisi", "Mantıksal Akıl Yürütme (R1)"],
+    "sanctionStatus": "Kısıtlama Yok",
+    "strategicRole": "Verimli mimari tasarım ile donanım kısıtlamalarını aşan küresel AI inovasyon öncüsü."
+  },
+  {
+    "name": "CASC (China Aerospace Science and Technology)",
+    "chineseName": "中国航天科技集团",
+    "type": "Merkezi Kamu İktisadi Teşekkülü (KİT)",
+    "focus": ["Uzun Yürüyüş Roketleri", "Tiangong Uzay İstasyonu", "Chang'e Ay Keşif", "BeiDou"],
+    "sanctionStatus": "US CMIC / Entity List",
+    "strategicRole": "Çin'in uzay hegemonyası ve stratejik füze savunma omurgası."
+  },
+  {
+    "name": "CAS (Chinese Academy of Sciences)",
+    "chineseName": "中国科学院",
+    "type": "Ulusal Bilimler Akademisi",
+    "focus": ["Kuantum Bilişim", "Fotonik", "Sentetik Biyoloji", "Temel Fizik"],
+    "sanctionStatus": "Bağlı Enstitülerin Bir Kısmı Listede",
+    "strategicRole": "Ülkedeki 100'den fazla araştırma enstitüsünü koordine eden temel bilim beyni."
+  },
+  {
+    "name": "SMEE (Shanghai Micro Electronics Equipment)",
+    "chineseName": "上海微电子装备",
+    "type": "Devlet Destekli Ekipman Üreticisi",
+    "focus": ["DUV / İmmersiyon Litografi Tarayıcıları", "Gelişmiş Paketleme"],
+    "sanctionStatus": "US Entity List",
+    "strategicRole": "ASML tekeline karşı Çin'in tek litografi makinesi geliştiricisi."
+  },
+  {
+    "name": "Seven Sons of National Defense (国防七子)",
+    "chineseName": "国防七校 (Beihang, BIT, Harbin IT, NWPU, vb.)",
+    "type": "Savunma ve Havacılık Üniversiteleri",
+    "focus": ["Hipersonik", "Nükleer Denizaltı", "Hayalet Uçak", "Siber Harp", "Radar"],
+    "sanctionStatus": "US Entity List (Tüm Üniversiteler)",
+    "strategicRole": "Askeri-Sivil Entegrasyon doktrininin en kritik mühendislik ve Ar-Ge fidanlığı."
+  }
+]

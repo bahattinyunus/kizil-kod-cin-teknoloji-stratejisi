@@ -2,3 +2,5 @@ node_modules/
 dist/
 .env
 coverage/
+*.log
+analysis_export.json

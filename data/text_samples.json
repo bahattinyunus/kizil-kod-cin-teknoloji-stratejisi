@@ -37,7 +37,7 @@
   {
     "id": "doc-8",
     "title": "Yapay Zeka Destekli Otonom Dron Sürüsü (DJI)",
-    "content": "DJI, karmaşık arama-kurtarma senaryolarındaGPS bağımsız hareket edebilen yapay zeka destekli otonom dron sürüleri için saha koşullarında prototip gösterimi düzenleyerek sistemi doğrulamıştır."
+    "content": "DJI, karmaşık arama-kurtarma senaryolarında GPS bağımsız hareket edebilen yapay zeka destekli otonom dron sürüleri için saha koşullarında prototip gösterimi düzenleyerek sistemi doğrulamıştır."
   },
   {
     "id": "doc-9",
@@ -58,5 +58,65 @@
     "id": "doc-12",
     "title": "Kuantum Haberleşme Uydusu Micius Prototip Çalışmaları",
     "content": "Kuantum haberleşme uydusu Micius-2 için tasarlanan yüksek hassasiyetli lazer vericisi, laboratuvarda kurulan entegre prototip üzerinde test edilmiş ve sinyal doğruluğu onaylanmıştır."
+  },
+  {
+    "id": "doc-13",
+    "title": "DeepSeek-V3 ve R1 Akıl Yürütme Mimarisi",
+    "content": "DeepSeek ekibi, Mixture-of-Experts (MoE) ve çoklu belirteç tahmin mimarisi üzerine kurulu akıl yürütme modelini küresel ölçekte deployed ve commercial açık ağırlıklı olarak operasyonel kullanıma sunmuştur. Sistem, Batılı kapalı modellerle rekabet eden seviyede sahada kanıtlanmış performansa sahiptir."
+  },
+  {
+    "id": "doc-14",
+    "title": "Huawei Ascend 910C AI Hızlandırıcı ve CANN Ekosistemi",
+    "content": "Huawei, Amerikan GPU ambargolarına karşı geliştirdiği Ascend 910C AI çiplerini büyük bulut veri merkezlerine sevk ederek pilot üretim ve operasyonel ortam testlerini tamamlamış, yerli kümeleme için kalifiye edilmiştir."
+  },
+  {
+    "id": "doc-15",
+    "title": "SMEE 28nm İmmersiyon DUV Litografi Tarayıcısı",
+    "content": "Shanghai Micro Electronics Equipment (SMEE), 193nm ArFi daldırmalı yerli litografi tarayıcısının mekanik ve optik montajını tamamlayarak yarıiletken fabrikasında ilk saha denemesi ve prototip gösterimi safhasına ulaşmıştır."
+  },
+  {
+    "id": "doc-16",
+    "title": "Empyrean Yerli EDA Çip Tasarım Yazılım Paketi",
+    "content": "Empyrean Technology, analog ve dijital entegre devre tasarımında yabancı tekel Synopsys ve Cadence bağımlılığını kırmak için 7nm destekli tam yerli EDA tasarım paketinin simülasyon ve doğrulama süreçlerini tamamlayıp ticari lisanslamaya başlamıştır."
+  },
+  {
+    "id": "doc-17",
+    "title": "Chang'e 6 Ay Karanlık Yüzü Otomasyonlu Numune Getirme",
+    "content": "Çin Ulusal Uzay İdaresi (CNSA), Ay'ın güney kutbu Aitken Havzası'ndan regolit örneklerini başarıyla dünyaya getirerek uzay keşfi tarihinde bir ilki gerçekleştirmiş ve sistemin operasyonel mükemmelliğini sahada kanıtlamıştır."
+  },
+  {
+    "id": "doc-18",
+    "title": "Guowang (GW) 13.000 Uyduluk Mega-Takımyıldızı",
+    "content": "Starlink benzeri küresel internet takımyıldızı projesi Guowang kapsamında ilk grup uydular fırlatılarak yörüngede lazer haberleşme ve hücre içi yönlendirme saha denemesi ve pilot fazı başlatılmıştır."
+  },
+  {
+    "id": "doc-19",
+    "title": "WS-15 Turbofan Beşinci Nesil Savaş Uçağı Motoru",
+    "content": "J-20 hayalet avcı uçakları için geliştirilen yüksek itiş gücüne ve süper seyir (supercruise) kabiliyetine sahip WS-15 yerli turbofan motoru, tam uçuş zarfı testlerini tamamlayarak seri üretim ve kalifikasyon aşamasına geçmiştir."
+  },
+  {
+    "id": "doc-20",
+    "title": "Unitree ve Fourier İnsansı Robotik Bedenlenmiş Yapay Zeka",
+    "content": "Unitree H1 ve Fourier GR-1 insansı robot modelleri, fabrika içi lojistik ve hassas montaj senaryoları için entegre prototip düzeyinde gösterim yaparak laboratuvar ortamında simülasyon ve test aşamalarını yürütmektedir."
+  },
+  {
+    "id": "doc-21",
+    "title": "BGI Group Ulusal Gen Bankası ve Sentetik Biyoloji",
+    "content": "BGI Group, yüksek verimli DNA dizileme makineleri ve tarımsal genetik düzenleme platformlarını operasyonel ölçekte deployed ve yaygınlaştırma seviyesine çıkararak ulusal biyogüvenlik altyapısına entegre etmiştir."
+  },
+  {
+    "id": "doc-22",
+    "title": "Nadir Toprak Elementleri ve Galyum-Germanyum İhracat Kotaları",
+    "content": "Çin Ticaret Bakanlığı, yarıiletken ve radar sistemleri için vazgeçilmez olan galyum, germanyum ve antimon minerallerinin küresel tedarik zincirindeki tekelini operasyonel ihracat kontrol mekanizmalarıyla sahada tam olarak uygulamaya koymuştur."
+  },
+  {
+    "id": "doc-23",
+    "title": "BeiDou-3 Küresel Konumlandırma ve Çift Kullanımlı Entegrasyon",
+    "content": "BeiDou-3 uydu takımı, küresel kapsama alanında milimetre düzeyinde diferansiyel konumlandırma ve kısa mesaj haberleşme hizmetlerini hem askeri hem sivil terminallere seri üretim ve operasyonel kullanımda kesintisiz sağlamaktadır."
+  },
+  {
+    "id": "doc-24",
+    "title": "C919 Yolcu Uçağı ve Yerli CJ-1000A Motor Uçuş Testleri",
+    "content": "COMAC C919 uçağında CFM LEAP-1C yerine kullanılacak yerli CJ-1000A yüksek baypaslı turbofan motoru, uçan test yatağı üzerinde saha denemesi ve operasyonel ortam test uçuşlarına devam etmektedir."
   }
 ]
